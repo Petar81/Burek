@@ -1,59 +1,36 @@
-	<!DOCTYPE html>
-	<html lang="sr">
+<!DOCTYPE html>
+<html lang="sr">
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link rel="icon" href="images/burek.gif" type="image/gif" sizes="16x16">
-		<title>Баци га по бурек! | Достава бурека | Београд | Србија</title>
-		<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="css/style.css"> </head>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" href="images/burek.gif" type="image/gif" sizes="16x16">
+	<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+	<title>Баци га по бурек! | Достава бурека | Београд | Србија</title>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css"> </head>
 
-	<body>
-		<header>
-			<h1 id="mainH1">Баци га по' бурек</h1>
-			<h2 id="subHeader"> - Достава Бурека !</h2>
-			<nav> <a href="">ENG</a> </nav>
-		</header>
-		<main>
-			<!--In the div HERE Map will be rendered-->
-			<article id="mapContainer" aria-label="Interactive map"> </article>
-			<!-- GEOLOCATION TEXT ERROR -->
-			<article>
-				<h3 id="status">LLL</h3> </article>
-		</main>
-		<footer>
-			<p>
-				<?php echo '&copy; ' . date("Y");  ?>
-			</p>
-		</footer>
-		 <script src="https://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-        <script src="https://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
-        <script type="text/javascript">
-            var platform = new H.service.Platform({
-                "app_id": "Ykv6MmZ03OJtiFD4R7Ht",
-                "app_code": "Vt4QTRVwcF2R6HRO2qsGMpOpZJjieecpCsI9MVEWbQk"
-            });
-            var geocoder = platform.getGeocodingService();
-            if(navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(position => {
-                    geocoder.reverseGeocode(
-                        {
-                            mode: "retrieveAddresses",
-                            maxresults: 1,
-                            prox: position.coords.latitude + "," + position.coords.longitude
-                        }, data => {
-                            alert("The nearest address to your location is:\n" + data.Response.View[0].Result[0].Location.Address.Label);
-                        }, error => {
-                            console.error(error);
-                        }
-                    );
-                });
-            } else {
-                console.error("Geolocation is not supported by this browser!");
-            }
-        </script>
-	</body>
+<body>
+	<header>
+		<h1 id="mainH1">Баци га по' бурек</h1>
+		<h2 id="subHeader"> - Достава Бурека !</h2>
+		<nav> <a href="">ENG</a> </nav>
+	</header>
+	<main>
+		<!--In the div HERE Map will be rendered-->
+		<article id="mapContainer" aria-label="Interactive map"> </article>
+		<!-- GEOLOCATION TEXT ERROR -->
+		<article>
+			<h3 id="status">LLL</h3> </article>
+	</main>
+	<footer>
+		<p>
+			<?php echo '&copy; ' . date("Y");  ?>
+		</p>
+	</footer>
+	<script src="js/map.js"></script>
+</body>
 
-	</html>
+</html>
