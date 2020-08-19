@@ -25,8 +25,7 @@ var url = 'https://host/path?CORSH=' + encodeURIComponent(JSON.stringify({
 
 
 fetch('https://pos.ls.hereapi.com/positioning/v1/locate?apiKey=Vt4QTRVwcF2R6HRO2qsGMpOpZJjieecpCsI9MVEWbQk', {
-	mode: 'no-cors'
-	, method: 'post'
+	 method: 'post'
 	, headers: {
 		"Content-type": "application/json; charset=UTF-8"
 	}
