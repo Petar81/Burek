@@ -25,11 +25,11 @@ function success(position) {
 	// Get the default map types from the platform object:
 	var defaultLayers = platform.createDefaultLayers();
 	// Instantiate the map:
-	var map = new H.Map(document.getElementById('mapContainer'), defaultLayers.vector.normal.map, {
-		zoom: 10
-		, center: {
-			lat: latitude
-			, lng: longitude
+	var map = new H.Map(targetElement, defaultLayers.vector.normal.map, {
+		zoom: 10, 
+		center: {
+			lat: 44.790241,
+			lng: 20.463484
 		}
 	});
 	// Create the default UI:
@@ -43,9 +43,9 @@ function success(position) {
 		'routingMode': 'fast'
 		, 'transportMode': 'car'
 		, // The start point of the route:
-		'origin': latitude + ',' + longitude
+		'origin': '44.802540,20.447191'
 		, // The end point of the route:
-		'destination': (latitude + 1) + ',' + (longitude - 1)
+		'destination': '44.790241,20.463484'
 		, // Include the route shape in the response
 		'return': 'polyline'
 	};
@@ -60,8 +60,8 @@ function success(position) {
 				// Create a polyline to display the route:
 				let routeLine = new H.map.Polyline(linestring, {
 					style: {
-						strokeColor: 'orange'
-						, lineWidth: 5
+						strokeColor: 'blue',
+						lineWidth: 5
 					}
 				});
 				// Create a marker for the start point:
@@ -74,6 +74,8 @@ function success(position) {
 				map.getViewModel().setLookAtData({
 					bounds: routeLine.getBoundingBox()
 				});
+				map.setCenter({lat:44.790000, lng:20.460000});
+  				map.setZoom(13.1);
 			});
 		}
 	};
