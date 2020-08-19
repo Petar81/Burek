@@ -1,5 +1,12 @@
 // WORKING ROUTING EXAMPPLE FROM POINT A TO POINT B
 
+function setMapViewBounds(map){
+  var bbox = new H.geo.Rect(44.848928, 20.405310,44.775438, 20.533128);
+  map.getViewModel().setLookAtData({
+    bounds: bbox
+  });
+}
+
 var latitude;
 var longitude;
 if (!navigator.geolocation) {
@@ -30,7 +37,8 @@ function success(position) {
 		center: {
 			lat: 44.790241,
 			lng: 20.463484
-		}
+		},
+		pixelRatio: window.devicePixelRatio || 1
 	});
 	// Create the default UI:
 	var ui = H.ui.UI.createDefault(map, defaultLayers);
@@ -45,7 +53,7 @@ function success(position) {
 		, // The start point of the route:
 		'origin': '44.802540,20.447191'
 		, // The end point of the route:
-		'destination': '44.790241,20.463484'
+		'destination': '44.790241,20.403484'
 		, // Include the route shape in the response
 		'return': 'polyline'
 	};
@@ -76,6 +84,7 @@ function success(position) {
 				});
 				map.setCenter({lat:44.790000, lng:20.460000});
   				map.setZoom(13.1);
+				setMapViewBounds(map);
 			});
 		}
 	};
@@ -88,3 +97,10 @@ function success(position) {
 		alert(error.message);
 	});
 }
+
+// SET A COPYRIGHT
+(function(){
+ let copyright = document.getElementById('copyright');
+ let date = new Date();
+	copyright.innerHTML = "&copy; " + date.getFullYear();
+ })();
