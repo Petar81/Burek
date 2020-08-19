@@ -13,7 +13,7 @@ function json(response) {
 
 // To manage limitations caused by the cross-origin domain sharing (CORS) mechanism
 
-var url = 'http://host/path?CORSH=' + encodeURIComponent(JSON.stringify({
+var url = 'https://host/path?CORSH=' + encodeURIComponent(JSON.stringify({
 	"Content-Type": "application/vnd.here.layerObjectList+json; charset=utf-8"
 	, "Accept": "application/json; charset=UTF-8"
 	, "GroupId": "FGx1AWaAzKOo0imNkLmf"
