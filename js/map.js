@@ -11,7 +11,7 @@ function json(response) {
 	return response.json()
 }
 
-// To manage limitations caused by the cross-origin domain sharing (CORS) mechanism
+/* To manage limitations caused by the cross-origin domain sharing (CORS) mechanism
 
 var url = 'https://host/path?CORSH=' + encodeURIComponent(JSON.stringify({
 	"Content-Type": "application/vnd.here.layerObjectList+json; charset=utf-8"
@@ -21,10 +21,10 @@ var url = 'https://host/path?CORSH=' + encodeURIComponent(JSON.stringify({
 	, "Auth-Identifier": "Ykv6MmZ03OJtiFD4R7Ht"
 	, "Auth-Secret": "AXqUNisVW46XJs9_pxuzOzneKlYPrY5X_6XgEQ6bw2YXhxAsu5bQifGaWJLL8oe8AyBNjv6i24uU_JcXDas7wg"
 }))
+*/
 
 
-
-fetch(url, {
+fetch('Vt4QTRVwcF2R6HRO2qsGMpOpZJjieecpCsI9MVEWbQk', {
 	mode: 'no-cors'
 	, method: 'post'
 	, headers: {
