@@ -30,7 +30,7 @@ fetch('https://pos.ls.hereapi.com/positioning/v1/locate?apiKey=Vt4QTRVwcF2R6HRO2
 	, headers: {
 		"Content-type": "application/json; charset=UTF-8"
 	}
-	, body: {
+	, body: JSON.stringify({
 		"lte": [{
 			"mcc": 262
 			, "mnc": 2
@@ -41,7 +41,7 @@ fetch('https://pos.ls.hereapi.com/positioning/v1/locate?apiKey=Vt4QTRVwcF2R6HRO2
 				"mac": "F4-55-95-11-2C-C1"
 			}
   			]
-			}
+			})
 	}).then(status)
 	.then(json)
 	.then(function (data) {
